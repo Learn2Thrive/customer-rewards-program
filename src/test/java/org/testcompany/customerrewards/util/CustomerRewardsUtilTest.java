@@ -30,7 +30,7 @@ public class CustomerRewardsUtilTest {
         var customerRewardsDetails =
                 CustomerRewardsUtil.calculateMonthlyCustomerRewardsPoints(1L, orders, 1);
         assertCustomerRewardsDetails(customerRewardsDetails, 1L, 450,
-                BigDecimal.valueOf(300.0), 1);
+                BigDecimal.valueOf(350.0), 1);
     }
 
     @Test

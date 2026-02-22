@@ -1,4 +1,4 @@
-package org.testcompany.customerrewards.config;
+package org.testcompany.customerrewards.exceptions;
 
 import jakarta.validation.ConstraintViolationException;
 import org.slf4j.Logger;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 import org.testcompany.customerrewards.dto.Error;
-import org.testcompany.customerrewards.exceptions.CustomerRewardsValidationException;
 
 import java.util.Objects;
 

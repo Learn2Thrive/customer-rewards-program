@@ -8,7 +8,7 @@
 		<version>4.0.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>org.demo</groupId>
+	<groupId>org.testcompany</groupId>
 	<artifactId>customer-rewards-program</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>customer-rewards-program</name>
@@ -45,7 +45,6 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

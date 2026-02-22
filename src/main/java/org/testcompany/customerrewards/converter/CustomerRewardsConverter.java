@@ -2,6 +2,7 @@ package org.testcompany.customerrewards.converter;
 
 import org.testcompany.customerrewards.domain.CustomerRewardsDetails;
 import org.testcompany.customerrewards.dto.GetCustomerRewardsPointsResponse;
+import org.testcompany.customerrewards.exceptions.CustomerRewardsValidationException;
 import org.testcompany.customerrewards.repository.CustomerRepository;
 import org.springframework.stereotype.Component;
 
@@ -28,7 +29,8 @@ public class CustomerRewardsConverter {
                         monthlyPointsList, customerRewardsDetails.getTotalPoints(),
                         customerRewardsDetails.getTotalAmount());
         var customer = customerRepository.getCustomerById(customerRewardsDetails.getCustomerId())
-                .orElseThrow();
+                .orElseThrow(() -> new CustomerRewardsValidationException(String.format(
+                        "Customer with id: %s not found", customerRewardsDetails.getCustomerId())));
         var customerPersonalInfo = new GetCustomerRewardsPointsResponse.CustomerPersonalInfo(
                 customer.getName(), customer.getPhoneNumber());
         return new GetCustomerRewardsPointsResponse(customer.getId(), customerPersonalInfo, rewardsPointsDTO);
